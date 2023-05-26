@@ -1,0 +1,13 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {FacultiesComponent} from "./components/faculties/faculties.component";
+
+const routes: Routes = [{
+  path: "**", component: FacultiesComponent
+}];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
