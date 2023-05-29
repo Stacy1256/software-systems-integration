@@ -41,3 +41,8 @@ INSERT INTO departments (id, name, faculty_id, email, phone, info) VALUES
 (18, 'Department of Radiophysics and Computer Technologies', 5, 'radiophysics@lnu.edu.ua', '(032) 239-46-95', 'Department of Radiophysics and Computer Technologies is ...'),
 (19, 'Department of System Design', 5, 'sd.dept.electronics@lnu.edu.ua', '(032) 239-43-80', 'Department of System Design is ...');
 SELECT setval('departments_id_seq', 19);
+
+INSERT INTO users (username, password_hash, is_admin, first_name, middle_name, last_name, phone, email, info)
+VALUES ('regular_user', '$2a$10$FIpjQDlCogT7evqJX7z.KOGVwnQTD1v4YK7G255OhlOdgMvjHjKYy', false, 'Maksim', 'Vasylovych', 'Kuleba', '+380673844567', 'Maksim.Vasylovych@test', 'Maksim Vasylovych info'),
+       ('admin', '$2a$10$FIpjQDlCogT7evqJX7z.KOGVwnQTD1v4YK7G255OhlOdgMvjHjKYy', true, 'Ivan', 'Vasylovych', 'Kuleba', '+380673844569', 'Ivan.Vasylovych@test', 'Ivan Vasylovych info');
+SELECT setval('users_id_seq', 2);

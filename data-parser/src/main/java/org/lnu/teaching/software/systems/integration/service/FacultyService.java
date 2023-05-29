@@ -43,16 +43,18 @@ public class FacultyService {
         String name = facultyNode.findElement(By.tagName("h2")).getText();
         faculty.setName(name);
 
-        String website = facultyNode.findElements(By.cssSelector(".details .value")).get(3).getText();
+        List<WebElement> valueNodes = facultyNode.findElements(By.cssSelector(".details .value"));
+
+        String website = valueNodes.get(3).getText();
         faculty.setWebsite(website);
 
-        String email = facultyNode.findElements(By.cssSelector(".details .value")).get(2).getText();
+        String email = valueNodes.get(2).getText();
         faculty.setEmail(email);
 
-        String phone = facultyNode.findElements(By.cssSelector(".details .value")).get(1).getText();
+        String phone = valueNodes.get(1).getText();
         faculty.setPhone(phone);
 
-        String address = facultyNode.findElements(By.cssSelector(".details .value")).get(0).getText();
+        String address = valueNodes.get(0).getText();
         faculty.setAddress(address);
 
         String info = "Детальну інформацію про факультет можна знайти на сайті факультету " + website;
